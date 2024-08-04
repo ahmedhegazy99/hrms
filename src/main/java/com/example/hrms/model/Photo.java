@@ -1,17 +1,16 @@
 package com.example.hrms.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import org.springframework.data.annotation.Id;
 
 @Entity
+@Table(name = "PHOTOS")
 public class Photo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false)
     private Integer id;
 
     @NotEmpty
@@ -20,6 +19,7 @@ public class Photo {
     private String contentType;
 
     @JsonIgnore
+    @Lob
     private byte[] data;
 
 

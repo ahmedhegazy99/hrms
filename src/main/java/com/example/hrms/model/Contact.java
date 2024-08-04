@@ -1,15 +1,14 @@
 package com.example.hrms.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "CONTACTS")
 public class Contact {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false)
     private Integer id;
 
     private String phone;
@@ -23,6 +22,12 @@ public class Contact {
     }
 
     public Contact() {
+    }
+
+    public Contact(String phone, String email, String address) {
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
     }
 
     public Integer getId() {

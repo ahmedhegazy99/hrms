@@ -4,7 +4,6 @@ import com.example.hrms.model.Photo;
 import com.example.hrms.repository.PhotosRepository;
 import org.springframework.stereotype.Service;
 
-//@Component  //this is same as @Service
 @Service
 public class PhotosService {
 
@@ -34,4 +33,6 @@ public class PhotosService {
         photosRepository.save(photo);
         return photo;
     }
+
+
 }

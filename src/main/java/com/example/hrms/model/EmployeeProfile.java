@@ -1,16 +1,14 @@
 package com.example.hrms.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToOne;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "EMPLOYEE_PROFILES")
 public class EmployeeProfile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false)
     private Integer id;
 
     private String employeeName;
@@ -32,6 +30,7 @@ public class EmployeeProfile {
         this.id = id;
     }
 
+
     public String getEmployeeName() {
         return employeeName;
     }
@@ -44,15 +43,15 @@ public class EmployeeProfile {
         return employeePhoto;
     }
 
-    public void setEmployeePhoto(Photo employeePhotoID) {
-        this.employeePhoto = employeePhotoID;
+    public void setEmployeePhoto(Photo employeePhoto) {
+        this.employeePhoto = employeePhoto;
     }
 
     public Contact getContactInfo() {
         return contactInfo;
     }
 
-    public void setContactInfo(Contact contactInfoID) {
-        this.contactInfo = contactInfoID;
+    public void setContactInfo(Contact contactInfo) {
+        this.contactInfo = contactInfo;
     }
 }

@@ -15,8 +15,8 @@ public class ContactService {
         this.contactRepository = contactRepository;
     }
 
-    public <S extends Contact> S save(S entity) {
-        return contactRepository.save(entity);
+    public Contact save(Contact contact) {
+        return contactRepository.save(contact);
     }
 
     public Optional<Contact> findById(Integer integer) {

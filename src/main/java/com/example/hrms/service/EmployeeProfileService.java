@@ -1,8 +1,6 @@
 package com.example.hrms.service;
 
-import com.example.hrms.model.Contact;
 import com.example.hrms.model.EmployeeProfile;
-import com.example.hrms.model.Photo;
 import com.example.hrms.repository.EmployeeProfileRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,15 +25,9 @@ public class EmployeeProfileService {
         employeeProfileRepository.deleteById(id);
     }
 
-    public EmployeeProfile save(String name, Photo employeePhoto, Contact contactInfo) {
-        EmployeeProfile employeeProfile = new EmployeeProfile();
-        employeeProfile.setEmployeeName(name);
-        employeeProfile.setEmployeePhoto(employeePhoto);
-        employeeProfile.setContactInfo(contactInfo);
-        employeeProfileRepository.save(employeeProfile);
-        return employeeProfile;
+    public EmployeeProfile save(EmployeeProfile employeeProfile) {
+        return employeeProfileRepository.save(employeeProfile);
     }
-
 
     public long count() {
         return employeeProfileRepository.count();
