@@ -4,7 +4,6 @@ import com.example.hrms.model.Contact;
 import com.example.hrms.model.EmployeeProfile;
 import com.example.hrms.service.ContactService;
 import com.example.hrms.service.EmployeeProfileService;
-import com.example.hrms.service.PhotosService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
